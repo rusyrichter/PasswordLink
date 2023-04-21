@@ -111,20 +111,7 @@ namespace HW_4_17.Controllers
 
 
         }
-        public IActionResult ImagePage(int id)
-        {
-            var vm = new UploadedImagesViewModel();
-            var mgr = new PasswordLinkManager(_connectionString);
-           
-
-           
-
-            vm.Image = mgr.GetImage(id);
-            
-
-
-            return View(vm);
-        }
+       
 
 
 
