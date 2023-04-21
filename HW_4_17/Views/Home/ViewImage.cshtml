@@ -1,0 +1,46 @@
+﻿@using HW_4_17.Models;
+@model UploadedImagesViewModel
+
+
+ 
+    <div b-wzwicsxrru class="container">
+        <main b-wzwicsxrru role="main" class="pb-3">
+        @if(Model.Message != null)
+        {
+            <h3>@Model.Message</h3>
+        }
+        @if(Model.Contains == false)
+        {
+            <div class="row">
+                <div class="col-md-6 offset-md-3 bg-light p-4 rounded shadow">
+                    <h4>Please enter the password for this image:</h4>
+                    <form method="post" action="/home/ViewImage">
+                        <input type="hidden" name="id" value="@Model.Image.Id" />
+                        <input type="text" class="form-control" placeholder="Password" name="password" />
+                        <br />
+                        <button class="btn btn-primary w-100">Submit</button>
+                        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8GpFy_uQ3T1Bq_WQtiUN9YOQsf83R6U5tD6dSaqN2iEXzaFWbri-5Ad4kqfbqQZo1KbJnL-ojqD8Xj-FjgmHCROgWJvJhYGktN_l_irIqhR_7wbt9gS2CHKlJ__IHG0ioUkNX2w8VpeUdXdaXwulqB4" />
+                    </form>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div b-wzwicsxrru class="container">
+                <main b-wzwicsxrru role="main" class="pb-3">
+
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2">
+                            <img src="/uploads/@Model.Image.FileName" style="width: 800px;" />
+                            <br />
+                            <h3> Views: @Model.Image.View </h3>
+                        </div>
+                    </div>
+
+                </main>
+            </div>
+
+        }
+
+        </main>
+    </div>
